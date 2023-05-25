@@ -70,6 +70,16 @@ public class DataLoader implements CommandLineRunner {
         laptime6.setLapNumber(2);
         laptime6.setTimeSeconds(110);
         laptime6.setRunner(runnerEntity3);
+
+        SponsorEntity sponsor = new SponsorEntity();
+        sponsor.setSponsorName("Nike");
+        sponsor.setRunner(runnerEntity);
+        SponsorEntity sponsor2 = new SponsorEntity();
+        sponsor2.setSponsorName("Adidas");
+        sponsor.setRunner(runnerEntity2);
+        SponsorEntity sponsor3 = new SponsorEntity();
+        sponsor3.setSponsorName("Puma");
+        sponsor.setRunner(runnerEntity3);
     }
 }
 
