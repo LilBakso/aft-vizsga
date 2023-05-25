@@ -2,6 +2,9 @@ package hu.gde.runnersdemo;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+
+import java.util.List;
+
 @Entity
 public class SponsorEntity {
     @Id
@@ -10,9 +13,8 @@ public class SponsorEntity {
     private String SponsorName;
 
     @JsonIgnore
-    @ManyToOne
-    @JoinColumn(nullable = false)
-    private RunnerEntity runner;
+    @OneToMany
+    private List<RunnerEntity> runner;
 
     public long getSponsorID() {
         return SponsorID;
@@ -30,11 +32,8 @@ public class SponsorEntity {
         SponsorName = sponsorName;
     }
 
-    public RunnerEntity getRunner() {
+    public List<RunnerEntity> getRunner() {
         return runner;
     }
 
-    public void setRunner(RunnerEntity runner) {
-        this.runner = runner;
-    }
 }

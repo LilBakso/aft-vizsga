@@ -73,13 +73,13 @@ public class DataLoader implements CommandLineRunner {
 
         SponsorEntity sponsor = new SponsorEntity();
         sponsor.setSponsorName("Nike");
-        sponsor.setRunner(runnerEntity);
+        runnerEntity.setSponsors(sponsor);
         SponsorEntity sponsor2 = new SponsorEntity();
         sponsor2.setSponsorName("Adidas");
-        sponsor.setRunner(runnerEntity2);
+        runnerEntity2.setSponsors(sponsor2);
         SponsorEntity sponsor3 = new SponsorEntity();
         sponsor3.setSponsorName("Puma");
-        sponsor.setRunner(runnerEntity3);
+        runnerEntity3.setSponsors(sponsor3);
     }
 }
 
