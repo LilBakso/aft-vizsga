@@ -8,18 +8,34 @@ import org.springframework.stereotype.Component;
 public class DataLoader implements CommandLineRunner {
 
     private final RunnerRepository runnerRepository;
+    private final SponsorRepository sponsorRepository;
 
     @Autowired
-    public DataLoader(RunnerRepository runnerRepository) {
+    public DataLoader(RunnerRepository runnerRepository, SponsorRepository sponsorRepository) {
         this.runnerRepository = runnerRepository;
+        this.sponsorRepository = sponsorRepository;
     }
 
     @Override
     public void run(String... args) {
+        SponsorEntity sponsor = new SponsorEntity();
+        sponsor.setSponsorName("Nike");
+
+        SponsorEntity sponsor2 = new SponsorEntity();
+        sponsor2.setSponsorName("Adidas");
+
+        SponsorEntity sponsor3 = new SponsorEntity();
+        sponsor2.setSponsorName("Puma");
+
+        sponsorRepository.save(sponsor);
+        sponsorRepository.save(sponsor2);
+        sponsorRepository.save(sponsor3);
+
         RunnerEntity runnerEntity = new RunnerEntity();
         runnerEntity.setRunnerName("Tomi");
         runnerEntity.setAveragePace(310);
         runnerEntity.setRunnerHeight(187);
+        runnerEntity.setSponsors(sponsor);
 
         LapTimeEntity laptime1 = new LapTimeEntity();
         laptime1.setLapNumber(1);
@@ -40,6 +56,7 @@ public class DataLoader implements CommandLineRunner {
         runnerEntity2.setRunnerName("Zsuzsi");
         runnerEntity2.setAveragePace(290);
         runnerEntity2.setRunnerHeight(169);
+        runnerEntity2.setSponsors(sponsor2);
 
         LapTimeEntity laptime3 = new LapTimeEntity();
         laptime3.setLapNumber(1);
@@ -60,6 +77,7 @@ public class DataLoader implements CommandLineRunner {
         runnerEntity2.setRunnerName("Riki");
         runnerEntity2.setAveragePace(300);
         runnerEntity2.setRunnerHeight(194);
+        runnerEntity3.setSponsors(sponsor3);
 
         LapTimeEntity laptime5 = new LapTimeEntity();
         laptime5.setLapNumber(1);
@@ -71,15 +89,7 @@ public class DataLoader implements CommandLineRunner {
         laptime6.setTimeSeconds(110);
         laptime6.setRunner(runnerEntity3);
 
-        SponsorEntity sponsor = new SponsorEntity();
-        sponsor.setSponsorName("Nike");
-        runnerEntity.setSponsors(sponsor);
-        SponsorEntity sponsor2 = new SponsorEntity();
-        sponsor2.setSponsorName("Adidas");
-        runnerEntity2.setSponsors(sponsor2);
-        SponsorEntity sponsor3 = new SponsorEntity();
-        sponsor3.setSponsorName("Puma");
-        runnerEntity3.setSponsors(sponsor3);
+
     }
 }
 
