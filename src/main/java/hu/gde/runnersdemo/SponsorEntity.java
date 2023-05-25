@@ -2,7 +2,7 @@ package hu.gde.runnersdemo;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
-
+@Entity
 public class SponsorEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
