@@ -51,9 +51,9 @@ public class RunnerRestController {
     public String getTallestRunner(){
         List<RunnerEntity> runnerEntityList = runnerRepository.findAll();
         RunnerEntity tmprunner = null;
-        for (RunnerEntity runners: runnerEntityList) {
-            if (runners.getRunnerHeight() > tmprunner.getRunnerHeight()){
-                tmprunner = runners;
+        for (RunnerEntity runner: runnerEntityList) {
+            if (tmprunner == null || runner.getRunnerHeight() > tmprunner.getRunnerHeight()){
+                tmprunner = runner;
             }
         }
         return tmprunner.getRunnerName();
