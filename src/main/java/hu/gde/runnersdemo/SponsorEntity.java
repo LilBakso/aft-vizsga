@@ -13,4 +13,28 @@ public class SponsorEntity {
     @ManyToOne
     @JoinColumn(nullable = false)
     private RunnerEntity runner;
+
+    public long getSponsorID() {
+        return SponsorID;
+    }
+
+    public void setSponsorID(long sponsorID) {
+        SponsorID = sponsorID;
+    }
+
+    public String getSponsorName() {
+        return SponsorName;
+    }
+
+    public void setSponsorName(String sponsorName) {
+        SponsorName = sponsorName;
+    }
+
+    public RunnerEntity getRunner() {
+        return runner;
+    }
+
+    public void setRunner(RunnerEntity runner) {
+        this.runner = runner;
+    }
 }
