@@ -22,7 +22,6 @@
             <td th:text="${runner.runnerId}"></td>
             <td th:text="${runner.runnerName}"></td>
             <td th:text="${runner.averagePace}"></td>
-            <td th:text="${runner.sponsor.SponsorName}"></td>
             <td>
                 <a th:href="@{/runner/{id}(id=${runner.runnerId})}" class="btn btn-primary">View</a>
             </td>
